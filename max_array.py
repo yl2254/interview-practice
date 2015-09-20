@@ -1,5 +1,7 @@
 
-"""Given two arrays were digits of one array represent a number,maxmise the number by replacing it with elements of second array. 
+
+""" Microsoft 
+Given two arrays were digits of one array represent a number,maxmise the number by replacing it with elements of second array. 
 eg: 
 arr={3,1,4,5,6} 
 rep={1,9,5,2,3} 
