@@ -15,18 +15,28 @@ def setZeroes(matrix):
     for b in range(m):
         if matrix[b][0]==0:
             first_col=True
-    while i< m:
-        j=1
-        while j<n:
+    # while i< m:
+    #     j=1
+    #     while j<n:
             
-            if matrix[i][j]==0:
-                matrix[0][j]=0
-                matrix[i][0]=0
-                #j=1
-                break
-            else:
+    #         if matrix[i][j]==0:
+    #             matrix[0][j]=0
+    #             matrix[i][0]=0
+    #             #j=1
+    #             break
+    #         else:
+    #             j+=1
+    #     i+=1
+    while i< m:
+            j=1
+            while j<n:
+                
+                if matrix[i][j]==0:
+                    matrix[0][j]=0
+                    matrix[i][0]=0
+                    #j=1
                 j+=1
-        i+=1
+            i+=1
     for i in range (1,m):
         for j in range(1, n):
             if matrix[i][0]==0 or matrix[0][j]==0:
