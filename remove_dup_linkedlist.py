@@ -12,30 +12,32 @@ class Solution(object):
         """
         if head==None or head.next==None:
             return head
-        current =head
-        dummy = ListNode(head.val)
-        dum_curr = dummy
-        
-        cur_dup=False
-        while (current!=None):
-            while (current.next!=None and (current.next.val==current.val)):
-                cur_dup=True
-                current.next=current.next.next
-            
-            if (cur_dup):
+        cur=head
+        newhead=None
+        newcur=None
+        distinct=True
+        first=True
+        curvalue=cur.val
+        while cur!=None:
+            curvalue=cur.val
+            if cur.next is None or cur.next.val!=curvalue:
                 
-                current=current.next
-                dum_curr.next=current
-                cur_dup=False
-                dum_curr=dum_curr.next
-            
+                if distinct:
+                    if first:
+                        newhead=ListNode(curvalue)
+                        newcur=newhead
+                        
+                        first=False
+                    else:
+                        newcur.next=ListNode(curvalue)
+                        newcur=newcur.next
+                
+                    
+                distinct=True
             else:
-                dum_curr.next=current
-                current=current.next
-                dum_curr=dum_curr.next
-            
-            
-        
-        return dummy.next
-        
+                distinct=False
+            cur=cur.next
+        return newhead
+
+
         
